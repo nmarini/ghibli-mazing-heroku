@@ -23,7 +23,7 @@ class Item extends Component {
         return (
             <>
             <h3>{this.itemTitle()[0].toUpperCase()}: <em>{this.itemTitle()[1]}</em></h3>
-            {this.props.item.name ? <h4>Film: <em>{this.state.filmTitle}</em></h4> : null}
+            {this.props.item.name ? <h4 className="attr-title">Film: <em>{this.state.filmTitle}</em></h4> : null}
                 {this.itemProperties().map((prop, index) => {
                     if (prop[0] !== this.itemTitle()[0] && prop[0] !== 'id') {
                         if (this.props.item.name) {
@@ -36,7 +36,7 @@ class Item extends Component {
                             }
                         }
                         if (!prop[1].toString().includes("http")) {
-                            return <li key={index}><b>{prop[0].toUpperCase()}</b>: <em>{prop[1]}</em></li> 
+                            return <li key={index}><b className="attr-title">{prop[0].toUpperCase()}</b>: <em>{prop[1]}</em></li> 
                         }
                     }
                 })}
