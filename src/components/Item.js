@@ -22,7 +22,7 @@ class Item extends Component {
     render() {
         return (
             <>
-            <h3>{this.itemTitle()[0].toUpperCase()}: <em>{this.itemTitle()[1]}</em></h3>
+            <h3 className="attr-title">{this.itemTitle()[0].toUpperCase()}: <em>{this.itemTitle()[1]}</em></h3>
             {this.props.item.name ? <h4 className="attr-title">Film: <em>{this.state.filmTitle}</em></h4> : null}
                 {this.itemProperties().map((prop, index) => {
                     if (prop[0] !== this.itemTitle()[0] && prop[0] !== 'id') {
