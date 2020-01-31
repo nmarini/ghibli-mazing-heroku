@@ -31,6 +31,10 @@
   border-radius: 10px
 }
 
+.attr-title {
+  color: rgb(134, 3, 146)
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
