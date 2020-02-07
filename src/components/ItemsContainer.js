@@ -12,18 +12,6 @@ class ItemsContainer extends Component {
         featuredItem : ''
     }
 
-    // handleChange = (event) => {
-    //     this.setState({query: event.target.value})
-    // }
-
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-       
-    //     let movie = this.findMovie(this.state.query);
-    //     this.setState({featuredMovie: movie});
-        
-    // }
-
     findItem = (searchTerm) => {
         return this.state.items.find((item) => {
             if (item.title) {
