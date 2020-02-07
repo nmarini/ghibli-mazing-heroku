@@ -9,7 +9,22 @@ class MenuContainer extends Component {
 
     state = {
         items : [], 
-        featuredItem : ''
+        featuredItem : '',
+        films: []
+    }
+
+    componentDidMount() {
+        const films = []
+        fetch(`https://ghibliapi.herokuapp.com/films`)
+            .then(res => res.json())
+            .then((result) => { 
+                result.map(f => {
+                    let film = {title: f.title, url: f.url}
+                    films.push(film)
+                })
+                this.setState({films: films});
+            }   
+        )
     }
 
     findItem = (searchTerm) => {
@@ -51,7 +66,7 @@ class MenuContainer extends Component {
           
             <DropdownMenu dropdownClickHandle={this.dropdownClickHandle} />
 
-            {this.state.featuredItem !== '' ? <Item item={this.state.featuredItem}/> : <h4>Click a list item to see more...</h4>}
+            {this.state.featuredItem !== '' ? <Item films={this.state.films} item={this.state.featuredItem}/> : <h4>Click a list item to see more...</h4>}
             
             
             <h1>From Studio Ghibli</h1>
