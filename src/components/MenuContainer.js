@@ -5,7 +5,7 @@ import DropdownMenu from './DropdownMenu';
 
  
 
-class ItemsContainer extends Component {
+class MenuContainer extends Component {
 
     state = {
         items : [], 
@@ -65,5 +65,5 @@ class ItemsContainer extends Component {
 
 }
 
-export default ItemsContainer;
+export default MenuContainer;
 

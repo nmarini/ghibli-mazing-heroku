@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import ItemsContainer from './components/ItemsContainer';
+import MenuContainer from './components/MenuContainer';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      movie 
+    }
+  }
 
   render() {
     return (
       <div className="App">
-        <ItemsContainer />
+        <MenuContainer />
       </div>
     )
   }
