@@ -9,11 +9,9 @@ class Item extends Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.item !== prevProps.item) {
-            this.setState({showFilm: false})
-        }
-    }
+    filmTitle = () => (
+        
+    )
     
     itemProperties = () => (Object.entries(this.props.item).map((info) => info))
 
@@ -23,7 +21,7 @@ class Item extends Component {
         return (
             <>
             <h3 className="attr-title">{this.itemTitle()[0].toUpperCase()}: <em>{this.itemTitle()[1]}</em></h3>
-            {this.props.item.name ? <h4 className="attr-title">Film: <em>{this.state.filmTitle}</em></h4> : null}
+            {this.props.item.name ? <h4 className="attr-title">Film: <em>{this.filmTitle}</em></h4> : null}
                 {this.itemProperties().map((prop, index) => {
                     if (prop[0] !== this.itemTitle()[0] && prop[0] !== 'id') {
                         if (this.props.item.name) {
